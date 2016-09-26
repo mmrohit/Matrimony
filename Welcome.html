@@ -1,0 +1,85 @@
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Welcome To Matrimonial Services</title>
+<link rel="shortcut icon" href="Ico.ico">
+
+
+
+
+
+<script>
+
+function check()
+{
+	re=new RegExp(/\s/);
+if((x=document.input.userName.value) == "" || x.length<5 || re.test(x) )
+ {
+	window.alert("Enter Valid Username");
+	document.input.userName.focus();
+	return false;
+
+}
+
+else if( (x=document.input.pass.value) == "" || x.length<5 || re.test(x))
+{
+	
+	window.alert("Enter Valid Password");
+	document.input.pass.focus();
+	return false;
+}
+	
+return true;
+}
+
+function changeHashOnLoad() {
+    window.location.href += "#";
+    setTimeout("changeHashAgain()", "50"); 
+}
+
+function changeHashAgain() {
+ window.location.href += "1";
+}
+
+var storedHash = window.location.hash;
+window.setInterval(function () {
+   if (window.location.hash != storedHash) {
+        window.location.hash = storedHash;
+   }
+}, 50);
+
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="changeHashOnLoad();">
+
+<hr color=black><center>
+
+
+<img src="Mar1.jpg" name=slide border=3  width=450 height=200 /><script language="JavaScript" src="slide.js"></script>
+</center>
+<hr color=black>
+<table align=center>
+<tr>
+<td>
+<div align="center">
+<form  name="input" id="input" action="LoginCheck" method="POST" onSubmit="return check()">
+<center><b>Username:</b> <input type="text" name="userName" ><br><br>
+		<b>Password:</b>   <input type="password" name="pass"><br><br>
+		<button type=submit  id=submit >Login</button><br>
+<a href="Forgot.html" style="color:#FF000">Forgot Password</a> <br>
+<div>NEW USER??<br>
+<a href="Register.jsp"><img src="Register.png" height=30></a>
+</div></center>
+</form></div>
+</td>
+</tr>
+</table>
+</body>
+</html>
